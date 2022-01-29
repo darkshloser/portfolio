@@ -119,22 +119,19 @@ export default {
 <style scoped>
 #container {
   position: absolute;
-  margin: 0;
-  width: 50vw;
-  height: 50vh;
   filter: url(#threshold) blur(0.8px);
 }
 
 #text1,
 #text2 {
   position: absolute;
-  display: inline-block;
 
   font-family: "FrederickatheGreat-regular", sans-serif;
   font-size: 40pt;
   text-align: center;
   user-select: none;
-  margin: 40% 40% 40% 40%;
-  padding: 5px 10px;
+  width: 100%;
+  left: 0px;
+  top: 40%;
 }
 </style>

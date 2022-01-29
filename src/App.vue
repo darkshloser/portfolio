@@ -80,7 +80,7 @@ export default {
 }
 
 body {
-  background-image: url("./assets/images/background.png"); /* The image used */
+  background-image: url("./assets/images/background.png"); /* The background image used */
   background-position: top center;
   background-color: #ffffff; /* Used if the image is unavailable */
   background-repeat: no-repeat; /* Do not repeat the image */
