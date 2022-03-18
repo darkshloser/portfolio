@@ -1,3 +1,8 @@
 <template>
-  <div>Portfolio Page</div>
+  <br />
+  <div class="white-paper">test</div>
 </template>
+
+
+<style scoped>
+</style>

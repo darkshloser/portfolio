@@ -125,7 +125,6 @@ export default {
 #text1,
 #text2 {
   position: absolute;
-
   font-family: "FrederickatheGreat-regular", sans-serif;
   font-size: 40pt;
   text-align: center;
@@ -133,5 +132,6 @@ export default {
   width: 100%;
   left: 0px;
   top: 40%;
+  z-index: 0;
 }
 </style>
