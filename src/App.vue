@@ -30,14 +30,12 @@ export default {
     handleScroll() {
       if (window.pageYOffset > this.posHeader) {
         this.objHeader.classList.add("sticky");
-        // this.objLogo.classList.remove("logo");
         this.objLogo.classList.add("logo-sticky");
         this.objMenuOn.classList.add("menu-on-sticky");
         this.objMenuOff.classList.add("menu-off-sticky");
       } else {
         this.objHeader.classList.remove("sticky");
         this.objLogo.classList.remove("logo-sticky");
-        // this.objLogo.classList.add("logo");
         this.objMenuOn.classList.remove("menu-on-sticky");
         this.objMenuOff.classList.remove("menu-off-sticky");
       }
@@ -135,34 +133,24 @@ body {
 .menu-on-sticky {
   transform: translateX(-3em);
 }
-.logo-sticky22 {
-  position: relative;
-  top: 25px;
-  left: 10%;
-  text-align: center;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 0px;
-  background-position: center center;
-  max-width: 30px;
-  padding: 0;
-}
 .logo-sticky {
   transform: translateX(3em);
 }
 .sticky {
-  position: fixed;
-  background-color: red;
-  z-index: 12;
-  opacity: 0.9;
+  position: relative;
+  border-radius: 25px;
+  right: 5%;
+  opacity: 0.8;
+  left: 5%;
+  width: 90%;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  z-index: 8;
 }
 .fixedHeader {
   position: fixed;
-  padding: 0;
-  margin: 0;
-  top: 0%;
   z-index: 10;
-  transition-duration: 1500ms;
+  transition-duration: 800ms;
 }
 .white-paper {
   background: #fff;

@@ -55,5 +55,9 @@ export default {
   margin-left: -50vw;
   left: 50%;
 }
+.container {
+  left: 0;
+  right: 0;
+}
 </style>
 
