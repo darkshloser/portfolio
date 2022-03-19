@@ -140,7 +140,7 @@ body {
   position: relative;
   border-radius: 25px;
   right: 5%;
-  opacity: 0.8;
+  opacity: 0.9;
   left: 5%;
   width: 90%;
   height: 80px;
