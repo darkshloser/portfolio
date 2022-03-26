@@ -138,7 +138,7 @@ body {
 }
 .sticky {
   position: relative;
-  border-radius: 25px;
+  border-radius: 0px 0px 25px 25px;
   right: 5%;
   opacity: 0.9;
   left: 5%;

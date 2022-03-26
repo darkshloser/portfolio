@@ -1,6 +1,8 @@
 <template>
   <br />
-  <div class="white-paper">test</div>
+  <div class="white-paper">
+    <img class="photo-style" />
+  </div>
 </template>
 
 
