@@ -15,16 +15,18 @@
       </div>
     </div>
     <div class="row my-row">
-      <div class="col">Professional experience</div>
+      <Experience />
     </div>
   </div>
 </template>
 
 <script>
 import LineChart from "./../components/charts/LineChart.vue";
+import Experience from "./../components/about/Experience.vue";
 export default {
   components: {
     LineChart,
+    Experience,
   },
   data() {
     return {

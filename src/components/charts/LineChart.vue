@@ -77,14 +77,7 @@ export default defineComponent({
         {
           barThickness: 10,
           data: [30, 40, 60, 70, 40, 44],
-          backgroundColor: [
-            "#53b06c",
-            "#5ef7e4",
-            "#846ff7",
-            "#45a39a",
-            "#10b2e8",
-            "#49995d",
-          ],
+          backgroundColor: ["#1685b8"],
         },
       ],
     };
