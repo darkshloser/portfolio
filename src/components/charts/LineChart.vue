@@ -69,14 +69,14 @@ export default defineComponent({
     });
 
     const testData = {
-      labels: ["Vue.js", "React", "Redux", "FastAPI / Django", "DevOps", "VBA"],
+      labels: ["Vue.js", "React", "FastAPI", "Django", "DevOps", "Scripting"],
       options: {
         indexAxis: "y",
       },
       datasets: [
         {
           barThickness: 10,
-          data: [30, 40, 60, 70, 40, 44],
+          data: [80, 65, 70, 50, 52, 70],
           backgroundColor: ["#1685b8"],
         },
       ],
