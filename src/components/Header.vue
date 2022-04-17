@@ -30,34 +30,6 @@ export default {
 </script>
 
 
-<style scoped>
-.logo {
-  position: fixed;
-  left: 20px;
-  top: 25px;
-  text-align: center;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 0px;
-  background-position: center center;
-  max-width: 50px;
-  padding: 0;
-  transition: all 0.3s ease-in-out;
-}
-.header {
-  height: 70px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0%;
-  width: 100vw;
-  position: fixed;
-  margin-left: -50vw;
-  left: 50%;
-}
-.container {
-  left: 0;
-  right: 0;
-}
+<style scoped src="@/assets/styles/header.css">
 </style>
 

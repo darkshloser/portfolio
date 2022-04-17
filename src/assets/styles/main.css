@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "Monoton-regular";
+  src: local("Monoton-Regular"),
+    url(../fonts/Monoton-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Gwendolyn-regular";
+  src: local("Gwendolyn-Regular"),
+    url(../fonts/Gwendolyn-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Genos-regular";
+  src: local("Genos-Regular"),
+    url(../fonts/Genos-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "FrederickatheGreat-regular";
+  src: local("FrederickatheGreat-Regular"),
+    url(../fonts/FrederickatheGreat-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "BlackOpsOne-regular";
+  src: local("BlackOpsOne-Regular"),
+    url(../fonts/BlackOpsOne-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "FlowCircular-regular";
+  src: local("FlowCircular-Regular"),
+    url(../fonts/FlowCircular-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "LibreBarcode39-regular";
+  src: local("LibreBarcode39-Regular"),
+    url(../fonts/LibreBarcode39-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "CormorantSC-regular";
+  src: local("CormorantSC-Regular"),
+    url(../fonts/CormorantSC-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "ShareTech-regular";
+  src: local("ShareTech-Regular"),
+    url(../fonts/ShareTech-Regular.ttf) format("truetype");
+}
+.font-tech {
+  font-family: "Share Tech", sans-serif;
+}
+.font-monoton {
+  font-family: "Monoton-regular", Helvetica, Arial;
+}
+.font-gwendolyn {
+  font-family: "Gwendolyn-regular", Helvetica, Arial;
+}
+.font-genos {
+  font-family: "Genos-regular", Helvetica, Arial;
+}
+.font-fredericka {
+  font-family: "FrederickatheGreat-regular", Helvetica, Arial;
+}
+.font-blackopsone {
+  font-family: "BlackOpsOne-regular", Helvetica, Arial;
+}
+.font-circular {
+  font-family: "FlowCircular-regular", Helvetica, Arial;
+}
+.font-barcode {
+  font-family: "LibreBarcode39-regular", Helvetica, Arial;
+}
+.font-cormorant {
+  font-family: "CormorantSC-regular", Helvetica, Arial;
+}
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-image: url("../images/background.png"); /* The background image used */
+  background-position: top center;
+  background-color: #ffffff; /* Used if the image is unavailable */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: auto; /* Resize the background image to cover the entire container */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.menu-on-sticky {
+  transform: translateX(-3em);
+}
+.logo-sticky {
+  transform: translateX(3em);
+}
+.sticky {
+  position: relative;
+  border-radius: 0px 0px 25px 25px;
+  right: 5%;
+  opacity: 0.9;
+  left: 5%;
+  width: 90%;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  z-index: 8;
+}
+.fixedHeader {
+  position: fixed;
+  z-index: 10;
+  transition-duration: 800ms;
+}
+.white-paper {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  max-width: 80%;
+  min-height: 1300px;
+  padding: 24px;
+  position: relative;
+  width: 80%;
+}
+.white-paper:before,
+.white-paper:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.white-paper:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+.white-paper:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}
+#container {
+  position: absolute;
+  filter: url(#threshold) blur(0.8px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  font-family: "FrederickatheGreat-regular", sans-serif;
+  font-size: 40pt;
+  text-align: center;
+  user-select: none;
+  width: 100%;
+  left: 0px;
+  top: 40%;
+  z-index: 0;
+}

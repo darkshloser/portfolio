@@ -11,7 +11,7 @@
     </div>
     <div class="row my-row">
       <div class="col">
-        <LineChart />
+        <SkillChart />
       </div>
     </div>
     <div class="row my-row">
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import LineChart from "./../components/charts/LineChart.vue";
+import SkillChart from "./../components/about/SkillChart.vue";
 import Experience from "./../components/about/Experience.vue";
 export default {
   components: {
-    LineChart,
+    SkillChart,
     Experience,
   },
   data() {
@@ -43,17 +43,5 @@ export default {
 </script>
 
 
-<style scoped>
-.photo-style {
-  width: 200px;
-  height: 300px;
-  background-color: gray;
-  border: 2px solid black;
-}
-.my-row {
-  border: 2px dotted green;
-}
-.my-col {
-  border: 4px dotted red;
-}
+<style scoped src="@/assets/styles/about.css">
 </style>

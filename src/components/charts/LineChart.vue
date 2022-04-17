@@ -17,9 +17,31 @@ Chart.register(...registerables);
 export default defineComponent({
   name: "Home",
   components: { BarChart },
-  setup() {
+  props: {
+    chartType: {
+      type: String,
+      required: true,
+      validator: function (value) {
+        return ["skills", "progress"].includes(value);
+      },
+    },
+    skills: {
+      type: Array,
+      required: true,
+      validator: function (value) {
+        if (value.length > 0) {
+          return value.every((obj) => obj.name && obj.level);
+        }
+        return true;
+      },
+    },
+  },
+  setup(props) {
+    let isSkillChart = props.chartType == "skills";
+    let skillNames = props.skills.map((value) => value.name);
+    let skillLevels = props.skills.map((value) => value.level);
+    console.log(skillNames);
     const barRef = ref();
-
     const options = ref({
       responsive: true,
       indexAxis: "y",
@@ -35,25 +57,6 @@ export default defineComponent({
                 rotation: 0,
               };
             },
-            // labelTextColor: function (context) {
-            //   return "#543453";
-            // },
-
-            // label: function (context) {
-            //   let label = context.dataset.label || "";
-            //   let tt = ["Middle"];
-
-            //   if (label) {
-            //     label += ": ";
-            //   }
-            //   if (context.parsed.y !== null) {
-            //     label += new Intl.ListFormat("en", {
-            //       style: "narrow",
-            //       type: "unit",
-            //     }).format(tt);
-            //   }
-            //   return label;
-            // },
           },
         },
       },
@@ -69,14 +72,14 @@ export default defineComponent({
     });
 
     const testData = {
-      labels: ["Vue.js", "React", "FastAPI", "Django", "DevOps", "Scripting"],
+      labels: skillNames,
       options: {
         indexAxis: "y",
       },
       datasets: [
         {
           barThickness: 10,
-          data: [80, 65, 70, 50, 52, 70],
+          data: skillLevels,
           backgroundColor: ["#1685b8"],
         },
       ],

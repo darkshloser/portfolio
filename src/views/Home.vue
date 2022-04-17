@@ -116,22 +116,3 @@ export default {
 </script>
 
 
-<style scoped>
-#container {
-  position: absolute;
-  filter: url(#threshold) blur(0.8px);
-}
-
-#text1,
-#text2 {
-  position: absolute;
-  font-family: "FrederickatheGreat-regular", sans-serif;
-  font-size: 40pt;
-  text-align: center;
-  user-select: none;
-  width: 100%;
-  left: 0px;
-  top: 40%;
-  z-index: 0;
-}
-</style>
