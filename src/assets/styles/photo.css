@@ -1,0 +1,17 @@
+
+.box {
+  position: relative;
+  margin: 10px 5px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border-style: double;
+  border-width: 4px;
+  border-color: rgb(199, 198, 198);
+  display: inline-block;
+}
+
+.card {
+  border: 0px solid rgba(0,0,0,.125);
+}
+
+
