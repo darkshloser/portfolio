@@ -71,7 +71,6 @@
             </div>
           </div>
         </div>
-        <!-- <div v-html="flags.english" class="lang-flags"></div> -->
       </div>
     </div>
 
@@ -83,7 +82,7 @@
           <li v-for="(item, index) in education" :key="index">
             <div class="content">
               <h5>{{ item.institute }}</h5>
-              <h7>{{ item.course }}</h7>
+              <h7 class="font-genos">{{ item.course }}</h7>
               <p>
                 <i>{{ item.date }}</i>
               </p>
@@ -108,8 +107,7 @@ export default {
           position: "Freelancer",
           description: {
             isHtml: true,
-            value:
-              "<p>I'm grateful and always striving to provide the best service which I’m capable of to all the projects in which I’m involved. I believe that a key factor for a happy customer is the ability to clearly communicate and really understand customers' needs behind the scenes.</p><br/><p>If you are looking for a professional to provide solutions and add value to the project you have, we might be the right fit.</p>",
+            value: `<p class="font-genos">I'm grateful and always striving to provide the best service which I’m capable of to all the projects in which I’m involved. I believe that a key factor for a happy customer is the ability to clearly communicate and really understand customers' needs behind the scenes.</p><br/><p class="font-genos">If you are looking for a professional to provide solutions and add value to the project you have, we might be the right fit.</p>`,
           },
           skills: ["VueJS", "React", "FastAPI", "Docker", "Scripting"],
           selected: false,
@@ -118,9 +116,8 @@ export default {
           date: "Jan 2019",
           position: "Full Stack Developer",
           description: {
-            isHtml: false,
-            value:
-              "Active involvement in the design and development of a web-based enterprise application for managing lithography machines. This project along with a few other smaller applications requires a wide variety of skills and experience to develop and maintain.",
+            isHtml: true,
+            value: `<p class="font-genos">Active involvement in the design and development of a web-based enterprise application for managing lithography machines. This project along with a few other smaller applications requires a wide variety of skills and experience to develop and maintain.</p>`,
           },
           skills: [
             "VueJS",
@@ -136,9 +133,8 @@ export default {
           date: "Jul 2017",
           position: "Blockchain Developer",
           description: {
-            isHtml: false,
-            value:
-              "An open-source project whose main purpose is to generate global credentials wallet for every learner with bullet-proved accomplishments validated and stored on the blockchain. This will add credibility to actual accomplishments and speed up the hiring process. One of the biggest problems was the validation of a significant amount of information (on the blockchain itself), which was solved by combining blockchain and IPFS technologies.",
+            isHtml: true,
+            value: `<p class="font-genos">An open-source project whose main purpose is to generate global credentials wallet for every learner with bullet-proved accomplishments validated and stored on the blockchain. This will add credibility to actual accomplishments and speed up the hiring process. One of the biggest problems was the validation of a significant amount of information (on the blockchain itself), which was solved by combining blockchain and IPFS technologies.</p>`,
           },
           skills: [
             "React",
@@ -154,9 +150,8 @@ export default {
           date: "May 2015",
           position: "Scrum Master",
           description: {
-            isHtml: false,
-            value:
-              "I’m grateful that I had the opportunity to help teams to accept and realize the benefits of Agile Methodology. As a Certified Scrum Master, I gained experience in areas like forming a team, guiding team members along with ensuring successful deliveries. I’ve also gained practical experience in change, risk, and scope management.",
+            isHtml: true,
+            value: `<p class="font-genos">I’m grateful that I had the opportunity to help teams to accept and realize the benefits of Agile Methodology. As a Certified Scrum Master, I gained experience in areas like forming a team, guiding team members along with ensuring successful deliveries. I’ve also gained practical experience in change, risk, and scope management.</p>`,
           },
           skills: ["Jira", "Assembla", "Trello"],
           selected: false,
@@ -165,9 +160,8 @@ export default {
           date: "Jan 2015",
           position: "R&D Specialist",
           description: {
-            isHtml: false,
-            value:
-              "I've gained experience with the entire lifecycle of enterprise software solutions. I have been actively involved in the process of fixing issues, building, and performing all the required testing before delivering the new changes. ",
+            isHtml: true,
+            value: `<p class="font-genos">I've gained experience with the entire lifecycle of enterprise software solutions. I have been actively involved in the process of fixing issues, building, and performing all the required testing before delivering the new changes.</p>`,
           },
           skills: ["Python", "C", "Bash", "ClearCase"],
           selected: false,
@@ -176,9 +170,8 @@ export default {
           date: "Mar 2007",
           position: "Software Developer (CAD+GIS)",
           description: {
-            isHtml: false,
-            value:
-              "Early in my career, I had the opportunity to work for a company that was assigned to develop software applications for customers like Kozloduy NPP, Chimcomplect Engineering Jsc. (NABUCCO pipeline project), and many municipalities in Bulgaria.",
+            isHtml: true,
+            value: `<p class="font-genos">Early in my career, I had the opportunity to work for a company that was assigned to develop software applications for customers like Kozloduy NPP, Chimcomplect Engineering Jsc. (NABUCCO pipeline project), and many municipalities in Bulgaria.</p>`,
           },
           skills: ["VBA", "MySQL", "Scripting", "ODBS"],
           selected: false,
@@ -378,7 +371,6 @@ body {
   background-color: #071f2a;
   border-radius: 25px;
   position: relative;
-  cursor: pointer;
   margin-top: 2px;
   transition: 0.5s;
 }
@@ -411,17 +403,6 @@ body {
 .education ul li:hover:before {
   background-color: #0f0;
   box-shadow: 0px 0px 10px 2px #0f0;
-}
-
-@media (max-width: 300px) {
-  .timeline {
-    width: 100%;
-    padding: 30px 5px 30px 10px;
-  }
-  .timeline ul li .content h3 {
-    color: #34ace0;
-    font-size: 15px;
-  }
 }
 </style>
 

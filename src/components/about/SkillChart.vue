@@ -1,5 +1,5 @@
 <template>
-  <LineChart chartType="skills" :skills="skills" />
+  <LineChart chartType="skills" :skills="skills" txtStyle="font-genos" />
 </template>
 
 <script>

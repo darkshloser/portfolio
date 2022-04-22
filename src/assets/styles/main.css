@@ -4,6 +4,16 @@
     url(../fonts/Monoton-Regular.ttf) format("truetype");
 }
 @font-face {
+  font-family: "Caveat-regular";
+  src: local("Caveat-Regular"),
+    url(../fonts/Caveat-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Cinzel-regular";
+  src: local("Cinzel-Regular"),
+    url(../fonts/Cinzel-Regular.ttf) format("truetype");
+}
+@font-face {
   font-family: "Gwendolyn-regular";
   src: local("Gwendolyn-Regular"),
     url(../fonts/Gwendolyn-Regular.ttf) format("truetype");
@@ -48,6 +58,12 @@
 }
 .font-monoton {
   font-family: "Monoton-regular", Helvetica, Arial;
+}
+.font-sticky-notes {
+  font-family: "Caveat-regular", Helvetica, Arial;
+}
+.font-section {
+  font-family: "Cinzel-regular", Helvetica, Arial;
 }
 .font-gwendolyn {
   font-family: "Gwendolyn-regular", Helvetica, Arial;
@@ -110,6 +126,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 26px auto 0;
   max-width: 80%;
+  min-width: 250px;
   min-height: 1300px;
   padding: 24px;
   position: relative;
@@ -153,4 +170,7 @@ body {
   left: 0px;
   top: 40%;
   z-index: 0;
+}
+.centered-text {
+  text-align: center;
 }

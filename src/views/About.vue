@@ -35,7 +35,7 @@ export default {
   },
   created() {
     this.htmlIntro = `
-    <h3 class="font-blackopsone">Name</h3>
+    <h3 class="font-section">Name</h3>
     <span class="font-genos">Introduction:</span>
     `;
   },

@@ -1,6 +1,7 @@
 <template>
   <BarChart
     class="bar-chart-wrapper"
+    :class="textStyle"
     ref="barRef"
     :chartData="testData"
     :options="options"
@@ -35,11 +36,16 @@ export default defineComponent({
         return true;
       },
     },
+    txtStyle: {
+      type: String,
+      required: false,
+    },
   },
   setup(props) {
     let isSkillChart = props.chartType == "skills";
     let skillNames = props.skills.map((value) => value.name);
     let skillLevels = props.skills.map((value) => value.level);
+    let textStyle = props.txtStyle ? props.txtStyle : "";
     console.log(skillNames);
     const barRef = ref();
     const options = ref({
