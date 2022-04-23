@@ -2,7 +2,7 @@
   <div class="row">
     <!-- Work experience -->
     <div class="col-lg-8 v-separator">
-      <h4>WORK EXPERIENCE</h4>
+      <h4 class="font-section" style="font-size: 20px">Work Experience</h4>
       <div class="timeline">
         <ul>
           <li
@@ -51,7 +51,7 @@
 
       <div class="row">
         <div class="col v-separator">
-          <h4>LANGUAGES</h4>
+          <h4 class="font-section" style="font-size: 20px">Languages</h4>
           <div class="language">
             <div class="row">
               <div v-html="flags.english" class="langs-interests"></div>
@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="col v-separator">
-          <h4>INTERESTS</h4>
+          <h4 class="font-section" style="font-size: 20px">Interests</h4>
           <div class="language">
             <div class="row">
               <div v-html="interests.swimming" class="langs-interests"></div>
@@ -76,15 +76,15 @@
 
     <!-- Education -->
     <div class="col-lg-4 v-separator">
-      <h4>EDUCATION</h4>
+      <h4 class="font-section" style="font-size: 20px">Education</h4>
       <div class="education">
         <ul>
           <li v-for="(item, index) in education" :key="index">
             <div class="content">
               <h5>{{ item.institute }}</h5>
-              <h7 class="font-genos">{{ item.course }}</h7>
+              <h7 class="font-sticky-notes">{{ item.course }}</h7>
               <p>
-                <i>{{ item.date }}</i>
+                <i class="font-sticky-notes">{{ item.date }}</i>
               </p>
             </div>
           </li>
@@ -235,7 +235,6 @@ body {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   perspective: 800px;
 }
 body {

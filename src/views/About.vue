@@ -36,7 +36,8 @@ export default {
   created() {
     this.htmlIntro = `
     <h3 class="font-section">Name</h3>
-    <span class="font-genos">Introduction:</span>
+    <span class="font-cormorant"><u>Introduction:</u></span>
+    <p class="font-cormorant">I appriciate the time You...</p>
     `;
   },
 };
