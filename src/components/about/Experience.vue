@@ -33,10 +33,10 @@
                     <div v-html="item.description.value"></div>
                   </div>
                   <div v-show="item.skills.length">
-                    <h7><u>Technologies used:</u></h7>
+                    <h7 class="font-genos"><u>Technologies:</u></h7>
                     <br />
                     <span
-                      class="badge skill-badge"
+                      class="badge skill-badge font-genos"
                       v-for="(skill, idx) in item.skills"
                       :key="idx"
                       >{{ skill }}</span
@@ -137,11 +137,11 @@ export default {
             value: `<p class="font-genos">An open-source project whose main purpose is to generate global credentials wallet for every learner with bullet-proved accomplishments validated and stored on the blockchain. This will add credibility to actual accomplishments and speed up the hiring process. One of the biggest problems was the validation of a significant amount of information (on the blockchain itself), which was solved by combining blockchain and IPFS technologies.</p>`,
           },
           skills: [
+            "Blockchain",
             "React",
             "Bootstrap",
             "NodeJS",
             "Django",
-            "Blockchain",
             "IPFS",
           ],
           selected: false,
@@ -173,7 +173,7 @@ export default {
             isHtml: true,
             value: `<p class="font-genos">Early in my career, I had the opportunity to work for a company that was assigned to develop software applications for customers like Kozloduy NPP, Chimcomplect Engineering Jsc. (NABUCCO pipeline project), and many municipalities in Bulgaria.</p>`,
           },
-          skills: ["VBA", "MySQL", "Scripting", "ODBS"],
+          skills: ["VBA", "MySQL", "Scripting"],
           selected: false,
         },
       ],

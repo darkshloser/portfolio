@@ -104,7 +104,7 @@ body {
   content: "";
   width: 10px;
   height: 10px;
-  background-color: #34ace0;
+  background-color: #094a68;
   border-radius: 50%;
   left: -11px;
   top: 28px;
@@ -160,7 +160,7 @@ body {
   border-radius: 50%;
   left: -11px;
   top: 28px;
-  background-color: #1685b8;
+  background-color: #d4d4d4;
   border-radius: 20px;
   transition: 2.5s;
 }
