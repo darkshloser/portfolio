@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1 class="font-section centered-text double-underline">Intro</h1>
-    <div v-html="html_portfolio_intro"></div>
+    <h3 class="font-section centered-text title-size">Intro</h3>
+    <div v-html="html_portfolio_intro" class="font-cormorant text-size"></div>
+    <br />
   </div>
 </template>
 
@@ -17,8 +18,10 @@ export default {
 </script>
 
 <style scoped>
-.double-underline {
-  text-decoration-line: underline;
-  text-decoration-style: double;
+.title-size {
+  font-size: 1.75rem;
+}
+.text-size {
+  font-size: 1rem;
 }
 </style>

@@ -1,11 +1,16 @@
+import projects from './../data/projects.json'
 
 const storageModule = {
     state() {
         return {
-            objHeader: null
+            objHeader: null,
+            jsonProjects: projects
         }
     },
     getters: {
+        getProjects(state) {
+            return state.jsonProjects
+        },
         getHeader(state) {
             return state.objHeader
         }

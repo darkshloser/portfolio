@@ -7,18 +7,31 @@
       />
     </div>
     <div class="description">
-      <h2>Project Name</h2>
-      <h4>Description</h4>
-      <p>
+      <h5 class="font-section">Project Name</h5>
+      <h7 class="font-cormorant">Description</h7>
+      <p class="font-cormorant">
         Classic Peace Lily is a spathiphyllum floor plant arranged in a bamboo
         planter with a blue & red ribbom and butterfly pick.
       </p>
-      <button>Details</button>
+
+      <button @click="fetchDetails('https://www.google.com/')">Details</button>
     </div>
   </div>
 </template>
 
 <style scoped src="@/assets/styles/project.css">
-/*"@/assets/styles/photo.css"*/
 </style>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    fetchDetails(url) {
+      window.open(url);
+    },
+  },
+};
+</script>
 

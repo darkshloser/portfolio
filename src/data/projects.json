@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "title": "Title of the project",
+            "customer": "Description of the project",
+            "description": "This is a example text ....",
+            "picture_location": "",
+            "ext_details": "",
+            "tech_stack": [
+                "Vue.js",
+                "FastAPI",
+                "Docker"
+            ]
+        },
+        {
+            "title": "Different project",
+            "customer": "Description of the project",
+            "description": "This is a example text ....",
+            "picture_location": "",
+            "ext_details": "",
+            "tech_stack": [
+                "Vue.js",
+                "VBA",
+                "Docker"
+            ]
+        }
+    ]
+}
