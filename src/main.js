@@ -12,5 +12,5 @@ const app = createApp(App);
 app.component('app-header', Header);
 app.component('app-footer', Footer);
 app.use(routes);
-app.use(store)
+app.use(store);
 app.mount('#app');
