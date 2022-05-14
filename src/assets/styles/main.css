@@ -124,10 +124,9 @@ body {
 .white-paper {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin: 26px auto 0;
+  margin: 26px auto 26px;
   max-width: 800px;
   min-width: 250px;
-  min-height: 1300px;
   padding: 24px;
   position: relative;
   width: 80%;
