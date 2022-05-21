@@ -27,9 +27,11 @@
     "vue": "^3.0.0",
     "vue-chart-3": "^3.1.6",
     "vue-chartjs": "^3.5.1",
+    "vue-cryptojs": "^2.2.1",
     "vue-flux": "^6.4.0",
     "vue-router": "^4.0.12",
     "vue3-carousel": "^0.1.38",
+    "vue3-cookies": "^1.0.6",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

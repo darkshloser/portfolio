@@ -23,6 +23,7 @@
               <input
                 type="text"
                 name="user_name"
+                v-model="sender.name"
                 class="form-control form-control-lg thick font-genos"
                 placeholder="Name"
               />
@@ -32,12 +33,14 @@
               <input
                 type="email"
                 name="user_email"
+                v-model="sender.email"
                 class="form-control form-control-lg thick font-genos"
                 placeholder="E-mail"
               />
             </div>
             <textarea
               name="message"
+              v-model="sender.message"
               class="form-control form-control-lg font-genos"
               rows="7"
               placeholder="Mensagem"
@@ -67,6 +70,7 @@
 <script>
 import MailSVG from "./../components/contact/mail.vue";
 import emailjs from "emailjs-com";
+
 export default {
   name: "ContactUs",
   components: {
@@ -74,28 +78,141 @@ export default {
   },
   data() {
     return {
-      submitted: false,
+      sender: {
+        name: "",
+        email: "",
+        message: "",
+      },
     };
   },
-  created() {},
+  mounted() {
+    if (this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME) == null) {
+      this.$cookies.set(
+        import.meta.env.VITE_EMAILJS_COOKIE_NAME,
+        this.$CryptoJS.AES.encrypt(
+          import.meta.env.VITE_COOKIE,
+          import.meta.env.VITE_ENC_SECRET
+        ).toString()
+      );
+    }
+  },
   methods: {
+    validateEmail(email) {
+      var re = new RegExp("\\S+@\\S+\\.\\S+");
+      return re.test(email);
+    },
+    validateInput({ name, message }) {
+      return !name || !message ? false : true;
+    },
+    makeToast() {
+      // this.$bvToast.toast('This is a test toast',{
+      //   title: 'Title',
+      //   autoHideDelay: 2000,
+      //   appendToast: true
+      // })
+    },
     sendEmail() {
-      emailjs
-        .sendForm(
-          "gsconsult_mail",
-          "template_gsconsult",
-          this.$refs.form,
-          "token"
-        )
-        .then(
-          (result) => {
-            console.log("SUCCESS!", result.text);
-            this.$refs.form.reset();
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
+      if (
+        !this.validateEmail(this.sender.email) ||
+        !this.validateInput(this.sender)
+      ) {
+        console.log("Input params are NOT vilid!");
+        return;
+      }
+      try {
+        if (
+          this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME) != null &&
+          this.$CryptoJS.AES.decrypt(
+            this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+            import.meta.env.VITE_ENC_SECRET
+          ).toString(this.$CryptoJS.enc.Utf8) != "" &&
+          import.meta.env.VITE_EMAILJS_VALID.includes(
+            this.$CryptoJS.AES.decrypt(
+              this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+              import.meta.env.VITE_ENC_SECRET
+            ).toString(this.$CryptoJS.enc.Utf8)
+          ) == true
+        ) {
+          this.$cookies.set(
+            import.meta.env.VITE_EMAILJS_COOKIE_NAME,
+            this.$CryptoJS.AES.encrypt(
+              this.$CryptoJS.AES.decrypt(
+                this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+                import.meta.env.VITE_ENC_SECRET
+              ).toString(this.$CryptoJS.enc.Utf8) +
+                this.$store.getters.getSecureValue,
+              import.meta.env.VITE_ENC_SECRET
+            ).toString()
+          );
+          emailjs
+            .sendForm(
+              import.meta.env.VITE_EMAILJS_SERVICE,
+              import.meta.env.VITE_EMAILJS_TEMPLATE,
+              this.$refs.form,
+              import.meta.env.VITE_EMAILJS_KEY
+            )
+            .then(
+              (result) => {
+                this.$refs.form.reset();
+              },
+              (error) => {
+                console.log("FAIL");
+              }
+            );
+        } else {
+          console.log("Error");
+          console.log(
+            this.$CryptoJS.AES.decrypt(
+              this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+              import.meta.env.VITE_ENC_SECRET
+            ).toString(this.$CryptoJS.enc.Utf8)
+          );
+        }
+      } catch (e) {
+        console.log("ERROR");
+      }
+
+      // ------------------------
+      // if (!!this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME)) {
+      //   console.log("There is a Cookie");
+      //   console.log(
+      //     this.$CryptoJS.AES.decrypt(
+      //       this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+      //       import.meta.env.VITE_ENC_SECRET
+      //     ).toString(this.$CryptoJS.enc.Utf8)
+      //   );
+      // } else {
+      //   console.log("Noooo");
+      //   this.$cookies.set(
+      //     import.meta.env.VITE_EMAILJS_COOKIE_NAME,
+      //     this.$CryptoJS.AES.encrypt(
+      //       import.meta.env.VITE_EMAILJS_INIT,
+      //       import.meta.env.VITE_ENC_SECRET
+      //     )
+      //   );
+      //   console.log(
+      //     this.$CryptoJS.AES.decrypt(
+      //       this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
+      //       import.meta.env.VITE_ENC_SECRET
+      //     ).toString(this.$CryptoJS.enc.Utf8)
+      //   );
+      // }
+      // this.$store.commit("incrementEmailStats");
+      // emailjs
+      //   .sendForm(
+      //     import.meta.env.VITE_EMAILJS_SERVICE,
+      //     import.meta.env.VITE_EMAILJS_TEMPLATE,
+      //     this.$refs.form,
+      //     import.meta.env.VITE_EMAILJS_KEY
+      //   )
+      //   .then(
+      //     (result) => {
+      //       this.$refs.form.reset();
+      //     },
+      //     (error) => {
+      //       console.log("FAIL");
+      //     }
+      //   );
     },
   },
 };
