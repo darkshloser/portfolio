@@ -64,20 +64,32 @@
       </div>
     </div>
   </div>
+  <SimpleToast
+    :display="toastProps.showToast"
+    :toastStyle="toastProps.type"
+    :msg="toastProps.message"
+  ></SimpleToast>
 </template>
 
 
 <script>
 import MailSVG from "./../components/contact/mail.vue";
+import SimpleToast from "./../components/general/SimpleToast.vue";
 import emailjs from "emailjs-com";
 
 export default {
   name: "ContactUs",
   components: {
     MailSVG,
+    SimpleToast,
   },
   data() {
     return {
+      toastProps: {
+        showToast: false,
+        type: "info",
+        message: "",
+      },
       sender: {
         name: "",
         email: "",
@@ -97,6 +109,22 @@ export default {
     }
   },
   methods: {
+    toastVisibility(message = "", type = "INFO") {
+      if (
+        type.toUpperCase() != "INFO" &&
+        type.toUpperCase() != "SUCCESS" &&
+        type.toUpperCase() != "WARNING" &&
+        type.toUpperCase() != "ERROR"
+      )
+        throw "Not proper type of Toast message!";
+
+      this.toastProps.showToast = !this.toastProps.showToast;
+      this.toastProps.type = type;
+      this.toastProps.message = message;
+      setTimeout(() => {
+        this.toastProps.showToast = false;
+      }, 3000);
+    },
     validateEmail(email) {
       var re = new RegExp("\\S+@\\S+\\.\\S+");
       return re.test(email);
@@ -104,19 +132,12 @@ export default {
     validateInput({ name, message }) {
       return !name || !message ? false : true;
     },
-    makeToast() {
-      // this.$bvToast.toast('This is a test toast',{
-      //   title: 'Title',
-      //   autoHideDelay: 2000,
-      //   appendToast: true
-      // })
-    },
     sendEmail() {
       if (
         !this.validateEmail(this.sender.email) ||
         !this.validateInput(this.sender)
       ) {
-        console.log("Input params are NOT vilid!");
+        this.toastVisibility("Not a valid message!", "error");
         return;
       }
       try {
@@ -154,65 +175,18 @@ export default {
             .then(
               (result) => {
                 this.$refs.form.reset();
+                this.toastVisibility("Message was sent!", "success");
               },
               (error) => {
-                console.log("FAIL");
+                this.toastVisibility("This message wasn't sent!", "error");
               }
             );
         } else {
-          console.log("Error");
-          console.log(
-            this.$CryptoJS.AES.decrypt(
-              this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
-              import.meta.env.VITE_ENC_SECRET
-            ).toString(this.$CryptoJS.enc.Utf8)
-          );
+          this.toastVisibility("This message wasn't sent!", "error");
         }
       } catch (e) {
-        console.log("ERROR");
+        this.toastVisibility("This message wasn't sent!", "error");
       }
-
-      // ------------------------
-      // if (!!this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME)) {
-      //   console.log("There is a Cookie");
-      //   console.log(
-      //     this.$CryptoJS.AES.decrypt(
-      //       this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
-      //       import.meta.env.VITE_ENC_SECRET
-      //     ).toString(this.$CryptoJS.enc.Utf8)
-      //   );
-      // } else {
-      //   console.log("Noooo");
-      //   this.$cookies.set(
-      //     import.meta.env.VITE_EMAILJS_COOKIE_NAME,
-      //     this.$CryptoJS.AES.encrypt(
-      //       import.meta.env.VITE_EMAILJS_INIT,
-      //       import.meta.env.VITE_ENC_SECRET
-      //     )
-      //   );
-      //   console.log(
-      //     this.$CryptoJS.AES.decrypt(
-      //       this.$cookies.get(import.meta.env.VITE_EMAILJS_COOKIE_NAME),
-      //       import.meta.env.VITE_ENC_SECRET
-      //     ).toString(this.$CryptoJS.enc.Utf8)
-      //   );
-      // }
-      // this.$store.commit("incrementEmailStats");
-      // emailjs
-      //   .sendForm(
-      //     import.meta.env.VITE_EMAILJS_SERVICE,
-      //     import.meta.env.VITE_EMAILJS_TEMPLATE,
-      //     this.$refs.form,
-      //     import.meta.env.VITE_EMAILJS_KEY
-      //   )
-      //   .then(
-      //     (result) => {
-      //       this.$refs.form.reset();
-      //     },
-      //     (error) => {
-      //       console.log("FAIL");
-      //     }
-      //   );
     },
   },
 };
