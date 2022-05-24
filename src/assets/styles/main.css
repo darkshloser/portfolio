@@ -99,12 +99,33 @@ body {
   margin: 0;
   padding: 0;
 }
-.menu-on-sticky {
-  transform: translateX(-3em);
+
+@media (min-width: 100px) and (max-width: 800px) {
+  .menu-on-sticky { transform: translateX(-10vw); }
+  .logo-sticky { transform: translateX(10vw); }
 }
-.logo-sticky {
-  transform: translateX(3em);
+@media (min-width: 801px) and (max-width: 1000px) {
+  .menu-on-sticky { transform: translateX(-12vw); }
+  .logo-sticky { transform: translateX(12vw); }
 }
+@media (min-width: 1001px) and (max-width: 1750px) {
+  .menu-on-sticky { transform: translateX(-10vw); }
+  .logo-sticky { transform: translateX(10vw); }
+}
+@media (min-width: 1751px) and (max-width: 1960px) {
+  .menu-on-sticky { transform: translateX(-15vw); }
+  .logo-sticky { transform: translateX(15vw); }
+}
+@media (min-width: 1961px) and (max-width: 2250px) {
+  .menu-on-sticky { transform: translateX(-20vw); }
+  .logo-sticky { transform: translateX(20vw); }
+}
+@media (min-width: 2251px) {
+  .menu-on-sticky { transform: translateX(-25vw); }
+  .logo-sticky { transform: translateX(25vw); }
+}
+
+
 .sticky {
   position: relative;
   border-radius: 0px 0px 25px 25px;
@@ -125,7 +146,7 @@ body {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 26px auto 26px;
-  max-width: 800px;
+  
   min-width: 250px;
   padding: 24px;
   position: relative;

@@ -219,8 +219,6 @@ export default {
   methods: {
     updateExperience(index) {
       this.experience[index].selected = !this.experience[index].selected;
-      console.log("Selected Experiences");
-      console.log(this.experience);
     },
   },
 };

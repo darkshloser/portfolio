@@ -12,15 +12,11 @@
   transition: all 0.3s ease-in-out;
 }
 .header {
-  height: 70px;
   width: 100%;
   margin: 0;
   padding: 0;
   top: 0%;
-  width: 100vw;
   position: fixed;
-  margin-left: -50vw;
-  left: 50%;
 }
 .container {
   left: 0;

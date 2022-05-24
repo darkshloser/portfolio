@@ -66,9 +66,6 @@ export default {
       if (elem.target.id === "twitter_id") {
         var beginShape = document.getElementById("test_id");
         var endShape = document.getElementById("test_id2");
-        console.log("Start morphing ...");
-        console.log(beginShape);
-        console.log(endShape);
         gsap.to("#test_id", {
           duration: 2,
           morphSVG: "240,220 240,70 70,70 70,220",
@@ -76,7 +73,7 @@ export default {
       }
     },
     selectExtLink(e) {
-      console.log(e.target.id === "twitter_id" ? true : false);
+      // console.log(e.target.id === "twitter_id" ? true : false);
       //   this.selExtLink = !this.selExtLink;
     },
   },
