@@ -1,20 +1,20 @@
 <template>
   <br />
   <div class="white-paper">
-    <div class="row my-row">
-      <div class="col-lg-4 col-md-5 my-col">
+    <div class="row">
+      <div class="col-lg-4 col-md-5">
         <img class="photo-style" />
       </div>
-      <div class="col-lg-8 col-md-7 my-col">
+      <div class="col-lg-8 col-md-7">
         <div v-html="htmlIntro"></div>
       </div>
     </div>
-    <div class="row my-row">
+    <div class="row">
       <div class="col">
         <SkillChart />
       </div>
     </div>
-    <div class="row my-row">
+    <div class="row">
       <Experience />
     </div>
   </div>

@@ -38,13 +38,34 @@ export default {
       projects: [
         {
           id: 1,
-          class: "projImg1",
-          html_description: `<p>dadasda</p>`,
+          class: "projCadastre",
+          html_description: `
+          <div>Tags: ...</div>
+          <p>In this project for the first time I had the opportunity to solve problems related to large and too complex cadastral information. 
+          For that reason a specific algorithm was implemented to cut off all the irrelevant information. 
+          This actually reflected to a significant improvement of time and space complexity of calculating the final reports.</p>
+          
+          <p>Another interesting part of the project was to create a tool which actually allow users to define their own custom exports from the database.
+          This actually required to minimize as much as I can the usage of the procedural SQL language for writing business logic.
+          By doing so the application become close to database-agnostic state.</p>
+          `,
           url: "https://www.w3schools.com",
         },
         {
           id: 2,
-          class: "projImg2",
+          class: "projCManagement",
+          html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
+          url: "www.google.com",
+        },
+        {
+          id: 3,
+          class: "projWeb",
+          html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
+          url: "www.google.com",
+        },
+        {
+          id: 4,
+          class: "projCraneRails",
           html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
           url: "www.google.com",
         },
@@ -69,11 +90,21 @@ export default {
   border-style: solid;
   background-size: cover;
 }
-.projImg1 {
-  background-image: url("../../assets/images/proj1.jpg");
+.projCadastre {
+  background-image: url("../../assets/images/cadastre.jpg");
+  background-size: 100% 100%;
 }
-.projImg2 {
-  background-image: url("../../assets/images/proj2.jpg");
+.projCManagement {
+  background-image: url("../../assets/images/cemetary.jpg");
+  background-size: 100% 100%;
+}
+.projWeb {
+  background-image: url("../../assets/images/web.jpg");
+  background-size: 100% 100%;
+}
+.projCraneRails {
+  background-image: url("../../assets/images/crane.jpg");
+  background-size: 100% 100%;
 }
 
 a {

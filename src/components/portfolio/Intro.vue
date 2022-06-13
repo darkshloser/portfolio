@@ -11,7 +11,13 @@ export default {
   name: "Intro",
   data() {
     return {
-      html_portfolio_intro: `<p>Lorem ipsum dolor sit amet, his no illum epicurei fabellas, no laudem civibus pro, ex eum ludus labitur. At mei etiam sadipscing, regione repudiandae pro ei. Nec ut vide omnesque phaedrum, mei suas dolore eu. Equidem commune no quo.</p><br/><p>Qui ludus cotidieque ei, ut purto mediocrem reformidans qui, has legere omnesque ei. Mea vero magna cotidieque at, vis noluisse prodesset ne, no pri graeco aperiri patrioque. Id per quando oblique. Sea suscipit iudicabit te. Has et euismod officiis posidonium. Altera patrioque persequeris et vim, habemus ancillae duo cu.</p>`,
+      html_portfolio_intro: `
+      <p>Very early in my career in software development, I had the opportunity to work on all aspects of software products not only on the design and development side but also meeting clients for new features and doing support activities.</p>
+      <p>This path was very intense and valuable to take at the beginning of my career. It gave me a broader overview of the entire development lifecycle and possible pitfalls which can accrue along the way.</p>
+      <br/>
+      <p>I’ve listed highlights of some of my previous projects and the tech stacks, which I’ve used in the section below.</p>
+      <p><u>Feel free to get in touch with me.</u></p>
+      `,
     };
   },
 };
