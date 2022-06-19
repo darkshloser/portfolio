@@ -12,5 +12,8 @@ package-lock.json
 # Logging
 logs/*
 
+# Publicj resources
+/public/*
+
 # Build project
 dist

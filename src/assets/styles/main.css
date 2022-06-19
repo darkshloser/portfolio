@@ -125,6 +125,7 @@ body {
   .logo-sticky { transform: translateX(25vw); }
 }
 
+@media print { body, div, p { display: none } }
 
 .sticky {
   position: relative;

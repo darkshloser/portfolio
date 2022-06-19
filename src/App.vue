@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container">
+  <div class="container" @contextmenu.prevent="onRightClick">
     <app-header id="headerID" class="fixedHeader"></app-header>
     <router-view></router-view>
     <app-footer></app-footer>
@@ -39,6 +39,9 @@ export default {
         this.objMenuOn.classList.remove("menu-on-sticky");
         this.objMenuOff.classList.remove("menu-off-sticky");
       }
+    },
+    onRightClick() {
+      pass;
     },
   },
 };
