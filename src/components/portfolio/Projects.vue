@@ -7,18 +7,8 @@
         :key="project.id"
         class="slide-container"
       >
-        <img class="carousel__item" :class="project.class" />
-        <div class="font-genos" v-html="project.html_description"></div>
-        <a :href="project.url" class="cta" target="_blank">
-          <span>More</span>
-          <svg width="13px" height="10px" viewBox="0 0 13 10">
-            <path d="M1,5 L11,5"></path>
-            <polyline points="8 1 12 5 8 9"></polyline>
-          </svg>
-        </a>
+        <ProjectSlide :project="project" />
       </Slide>
-
-      <template #addons> </template>
     </Carousel>
   </div>
 </template>
@@ -26,48 +16,60 @@
 <script>
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+import ProjectSlide from "./ProjectSlide.vue";
 
 export default {
   name: "Projects",
   components: {
     Carousel,
     Slide,
+    ProjectSlide,
   },
   data() {
     return {
       projects: [
         {
           id: 1,
-          class: "projCadastre",
+          imgName: "/projects/cadastre.jpg",
           html_description: `
-          <div>Tags: ...</div>
           <p>In this project for the first time I had the opportunity to solve problems related to large and too complex cadastral information. 
           For that reason a specific algorithm was implemented to cut off all the irrelevant information. 
           This actually reflected to a significant improvement of time and space complexity of calculating the final reports.</p>
-          
           <p>Another interesting part of the project was to create a tool which actually allow users to define their own custom exports from the database.
           This actually required to minimize as much as I can the usage of the procedural SQL language for writing business logic.
           By doing so the application become close to database-agnostic state.</p>
           `,
-          url: "https://www.w3schools.com",
+          url: "https://geoplus-bg.com/storage/pdf/biblioteka-za-kadaster.pdf",
         },
         {
           id: 2,
-          class: "projCManagement",
-          html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
-          url: "www.google.com",
+          imgName: "/projects/cemetary.jpg",
+          html_description: `
+          <p>This application was designed and created to automate most of the administrative processes of managing cemetaries. We’ve researched the best practices in Belgium and implemented that into a product focused mainly for municipalities in Bulgaria.</p>
+          <p>After finalization of the product and first trials results exceeded my expectations and customers was more than satisfied of the product. These good results was not only functionality wise but also it was related to drastically increasing financial returns.</p>
+          <p>Some of the places where this product was integrated are <a href="https://strazhitsa.com/" target="_blank">Strazhitsa</a>, <a href="https://pavlikeni.bg/" target="_blank">Pavlikeni</a>, <a href="https://kozloduy.bg/" target="_blank">Kozloduy</a> etc.</p>
+          `,
+          url: "https://geoplus-bg.com/77943",
         },
         {
           id: 3,
-          class: "projWeb",
-          html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
-          url: "www.google.com",
+          imgName: "/projects/web.jpg",
+          html_description: `
+          <p>First project which I’ll mention here is <a href="https://os.university/" target="_blank">Open Source University</a>, where I had the opportunity to be part of a team building decentralized application (dapp). Purpose of the project is to implement trust between Learners, Academia and Bussiness. I took my ferst steps in a production grade blockchain technologies with that project, which gave me a lot of knowledge about maturity of blockchain technology and actual benefits of it.</p>
+          <p>Second project is related to making predictions to market movements, based on reinforcement learning algorithms. Currently the project is in process of rework and the tech. Stack will be changed slightly. Backend is build on modern high performance framework like FastAPI with uvocorn ASGI server. Frontend currently is in process of migrating to Vue 3 (respectivelly with Vuex 4.0).</p>
+          <p>There are many other projects which are related to Enterprice customers and respectively confidential as well. Wide variate of technologies was used for these web based applications which gave me good experience with broad range of frameworks and languages as well.</p>
+          `,
+          url: "https://www.asml.com/",
         },
         {
           id: 4,
-          class: "projCraneRails",
-          html_description: `<p>Test text hfjsd gd ggg </p><br/><p>This is a second paragraph ...</p><br/><p>This is another paragraph ...</p>`,
-          url: "www.google.com",
+          imgName: "/projects/crane.jpg",
+          html_description: `
+          <p>Purpose of that project was to design and develop application which will be able to make calculations and analize the result for defformations outside predefined allowed parameters. This software product is able to prepare needed calculations, analyses and graphical reports for overhead and polar cranes.</p>
+          <p>Main reason for that product to be developed was the need to have standertized solution for some of the most important cranes on “Kozloduy” NPP site.</p>
+          <p>It was beneficia that multiple measurements will be able to store for every single crane registered, This gave the opportunity also for the users to make comparisons between different periods and see actual size and direction of deformations.</p>
+          `,
+          url: "https://www.kznpp.org/en",
         },
       ],
     };

@@ -1,36 +1,32 @@
 <template>
-  <img class="carousel__item" :class="project.cls" />
-  <div class="font-genos" v-html="project.html_description"></div>
-  <a :href="project.url" class="cta" target="_blank">
-    <span>More</span>
-    <svg width="13px" height="10px" viewBox="0 0 13 10">
-      <path d="M1,5 L11,5"></path>
-      <polyline points="8 1 12 5 8 9"></polyline>
-    </svg>
-  </a>
+  <div>
+    <img class="project-image" :src="project.imgName" />
+    <div
+      class="project-description font-genos"
+      v-html="project.html_description"
+    ></div>
+    <a :href="project.url" class="cta" target="_blank">
+      <span>More</span>
+      <svg width="13px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </a>
+  </div>
 </template>
 
 
 <script>
-class Project {
-  constructor(id, cls, html_description, url) {
-    this.id = id;
-    this.cls = cls;
-    this.html_description = html_description;
-    this.url = url;
-  }
-}
-
 export default {
   name: "ProjectSlide",
-  props: ["project"],
+  props: {
+    project: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
-    return {
-      project: {
-        required: true,
-        type: Project,
-      },
-    };
+    return {};
   },
   methods: {},
 };
@@ -39,14 +35,19 @@ export default {
 
 
 <style scoped>
-.slide-container {
-  display: table;
+.project-description {
+  max-width: 900px;
+  position: relative;
+  text-align: left;
+  margin: auto;
+  width: 90%;
 }
-.carousel__item {
-  width: 70%;
-  padding-top: 70%;
+.project-image {
+  width: 90%;
+  max-width: 900px;
   border-style: solid;
-  background-size: cover;
+  background-position: top;
+  background-size: 100% 100%;
 }
 .projCadastre {
   background-image: url("../../assets/images/cadastre.jpg");
