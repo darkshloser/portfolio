@@ -4,12 +4,12 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import VueCookies from 'vue3-cookies'
-import VueCryptojs from 'vue-cryptojs'
+import VueCookies from 'vue3-cookies';
+import VueCryptojs from 'vue-cryptojs';
 import { createApp } from 'vue';
 import App from './App.vue';
-import routes from './router'
-import store from './store'
+import routes from './router';
+import store from './store';
 
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'

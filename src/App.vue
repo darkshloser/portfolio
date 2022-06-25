@@ -2,7 +2,7 @@
 <template>
   <div class="container" @contextmenu.prevent="onRightClick">
     <app-header id="headerID" class="fixedHeader"></app-header>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
     <app-footer></app-footer>
   </div>
 </template>
