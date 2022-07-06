@@ -46,7 +46,6 @@ export default defineComponent({
     let skillNames = props.skills.map((value) => value.name);
     let skillLevels = props.skills.map((value) => value.level);
     let textStyle = props.txtStyle ? props.txtStyle : "";
-    console.log(skillNames);
     const barRef = ref();
     const options = ref({
       responsive: true,

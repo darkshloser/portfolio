@@ -25,6 +25,14 @@ export default {
     Slide,
     ProjectSlide,
   },
+  props: {
+    compLoaded: Function,
+  },
+  created() {
+    window.addEventListener("DOMContentLoaded", () => {
+      this.compLoaded(true);
+    });
+  },
   data() {
     return {
       projects: [

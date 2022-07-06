@@ -1,19 +1,19 @@
 <template>
   <br />
   <div class="white-paper">
-    <div v-if="!isLoaded" class="empty-paper">
+    <div v-show="!allResourcesLoaded" class="empty-paper">
       <pacman-loader
-        :loading="!isLoaded"
+        :loading="!allResourcesLoaded"
         color="#7065eb"
         size="25px"
         class="loader-style"
       ></pacman-loader>
     </div>
-    <div v-show="isLoaded">
+    <div v-show="allResourcesLoaded">
       <compIntro />
       <compCompanies />
       <br />
-      <compPoject />
+      <compPoject :compLoaded="getChildState" />
     </div>
   </div>
 </template>
@@ -23,6 +23,7 @@ import PacmanLoader from "vue-spinner/src/PacmanLoader.vue";
 import compPoject from "./../components/portfolio/Projects.vue";
 import compIntro from "./../components/portfolio/Intro.vue";
 import compCompanies from "./../components/portfolio/Companies.vue";
+
 export default {
   name: "Header",
   components: {
@@ -31,18 +32,28 @@ export default {
     compCompanies,
     PacmanLoader,
   },
-  beforeCreate: function () {
-    window.addEventListener("load", () => {
-      this.isLoaded = true;
+  created() {
+    window.addEventListener("DOMContentLoaded", () => {
+      this.pageLoaded = true;
     });
-  },
-  mounted: function () {
-    this.isLoaded = true;
   },
   data() {
     return {
-      isLoaded: false,
+      projectsLoaded: false,
+      pageLoaded: null,
     };
+  },
+  computed: {
+    allResourcesLoaded() {
+      return this.pageLoaded == null || (this.projectsLoaded && this.pageLoaded)
+        ? true
+        : false;
+    },
+  },
+  methods: {
+    getChildState(projectsLoaded) {
+      this.projectsLoaded = projectsLoaded;
+    },
   },
   caculated: {},
 };

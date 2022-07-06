@@ -89,7 +89,7 @@
 .font-montserrat {
   font-family: "Montserrat", sans-serif;
 }
-body {
+.body-style {
   background-image: url("../images/background.png");
   background-position: top center;
   background-color: #ffffff; /* Used if the image is unavailable */

@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container" @contextmenu.prevent="onRightClick">
+  <div v-show="isLoaded" class="container" @contextmenu.prevent="onRightClick">
     <app-header id="headerID" class="fixedHeader"></app-header>
     <router-view :key="$route.fullPath"></router-view>
     <app-footer></app-footer>
@@ -12,11 +12,13 @@ export default {
   name: "App",
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("DOMContentLoaded", this.loaded);
   },
   data() {
     return {
       objHeader: null,
       posHeader: null,
+      isLoaded: false,
     };
   },
   mounted() {
@@ -25,8 +27,13 @@ export default {
     this.objMenuOff = document.getElementById("menu-off-id");
     this.objMenuOn = document.getElementById("menu-on-id");
     this.posHeader = this.objHeader.offsetTop;
+    this.isLoading = false;
   },
   methods: {
+    loaded() {
+      this.isLoaded = true;
+      document.body.className = "body-style";
+    },
     handleScroll() {
       if (window.pageYOffset > this.posHeader) {
         this.objHeader.classList.add("sticky");

@@ -18,6 +18,7 @@
             alt=""
             @load="imgLoaded"
           />
+          <comp-social />
         </div>
         <div class="col-lg-8 col-md-7">
           <div v-html="htmlIntro"></div>
@@ -25,11 +26,11 @@
       </div>
       <div class="row">
         <div class="col">
-          <SkillChart />
+          <comp-skill-chart />
         </div>
       </div>
       <div class="row">
-        <Experience />
+        <comp-experience />
       </div>
     </div>
   </div>
@@ -37,12 +38,14 @@
 
 <script>
 import PacmanLoader from "vue-spinner/src/PacmanLoader.vue";
-import SkillChart from "./../components/about/SkillChart.vue";
-import Experience from "./../components/about/Experience.vue";
+import compSkillChart from "./../components/about/TheSkillChart.vue";
+import compExperience from "./../components/about/TheExperience.vue";
+import compSocial from "./../components/about/TheSocial.vue";
 export default {
   components: {
-    SkillChart,
-    Experience,
+    compSkillChart,
+    compExperience,
+    compSocial,
     PacmanLoader,
   },
   data() {
